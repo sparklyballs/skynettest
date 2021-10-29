@@ -62,7 +62,7 @@ RUN \
 	RELEASE=$(curl -u "${SECRETUSER}:${SECRETPASS}" -sX GET "https://api.github.com/repos/SkynetNetwork/skynet-blockchain/releases/latest" \
 	| jq -r ".tag_name"); \
 	fi \
-	&& git clone -b "${RELEASE}" https://github.com/SkynetNetwork/skynet-blockchain.git \
+	&& git clone https://github.com/SkynetNetwork/skynet-blockchain \
 		/skynet-blockchain \		
 	&& git submodule update --init mozilla-ca \
 	&& sh install.sh \
